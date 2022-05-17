@@ -76,3 +76,14 @@ const addUserSkill = (arr, name, skills) => {
 };
 console.log(addUserSkill(users, "Jasee", ["PHP","JS","JS"]));
 
+//2.d
+const editUser = (arr, name, scores, skills, age) => {
+  //checks for user
+  const existing = arr.find((item) => item.name === name);
+  //if user exists then edit the user
+  existing && (existing.scores = scores) &&  (existing.skills = skills) && (existing.age = age) 
+  return arr;
+}
+console.log(editUser(users, "Jasee", 79, ["NODE"], 22));
+
+
