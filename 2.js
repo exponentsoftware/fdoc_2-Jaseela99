@@ -74,16 +74,18 @@ const addUserSkill = (arr, name, skills) => {
   existing ?eSkills.push(...skills) : console.log("user does not exist");
   return arr;
 };
-console.log(addUserSkill(users, "Jasee", ["PHP","JS","JS"]));
+console.log(addUserSkill(users, "Jasee", ["PHP","JS"]));
 
-//2.d
+//2.d 
 const editUser = (arr, name, scores, skills, age) => {
   //checks for user
   const existing = arr.find((item) => item.name === name);
   //if user exists then edit the user
-  existing && (existing.scores = scores) &&  (existing.skills = skills) && (existing.age = age) 
+  console.log("e",existing);
+  //skills array is merged to existing skilla array without forming new one
+  existing && (existing.scores = scores) &&  (existing.skills.push(...skills)) && (existing.age = age) 
   return arr;
 }
-console.log(editUser(users, "Jasee", 79, ["NODE"], 22));
+console.log(editUser(users, "Jasee", 79, ["NODE","react"], 22));
 
 
